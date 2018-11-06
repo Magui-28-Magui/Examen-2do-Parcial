@@ -20,7 +20,7 @@ class CreateBueysTable extends Migration
             $table->string('color');
             $table->string('genero');
             $table->unsignedInteger('edad');
-            $table->unsignedInteger('animals_id');
+            $table->unsignedInteger('animales_id');
         });
     }
 
