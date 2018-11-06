@@ -16,6 +16,11 @@ class CreateBueysTable extends Migration
         Schema::create('bueys', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('color');
+            $table->string('genero');
+            $table->unsignedInteger('edad');
+            $table->unsignedInteger('animals_id');
         });
     }
 

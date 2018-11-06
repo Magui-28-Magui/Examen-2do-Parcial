@@ -16,6 +16,7 @@ class CreateElArcaDeNoesTable extends Migration
         Schema::create('el_arca_de_noes', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+             $table->string('especie');
         });
     }
 

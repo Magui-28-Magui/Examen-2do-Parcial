@@ -16,6 +16,11 @@ class CreatePuercoSpinsTable extends Migration
         Schema::create('puerco_spins', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('color');
+            $table->string('genero');
+            $table->unsignedInteger('edad');
+            $table->unsignedInteger('animals_id');
         });
     }
 
