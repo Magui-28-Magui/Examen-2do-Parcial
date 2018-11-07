@@ -1,4 +1,12 @@
 <?php
+use Illuminate\Http\Request;
+use App\armino;
+use App\buey;
+use App\gloton;
+use App\osoHormiguero;
+use App\oso;
+use App\puercoSpin;
+use App\animales;
 
 Route::get('/', function () {
     return view('welcome');
