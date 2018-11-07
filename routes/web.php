@@ -11,6 +11,7 @@ use App\animales;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/ListaAnimales',function(){
     $arm = DB::table('arminos')->get();
     $glot = DB::table('gloton')->get();
@@ -19,7 +20,7 @@ Route::get('/ListaAnimales',function(){
     $pooh = DB::table('oso')->get();
     $osoH = DB::table('osoHormiguero')->get();
     
-return $arm.$glot.$puercoS.$we.$pooh.$osoH;})->middleware('grupoNo1');
+return $arm.$glot.$puercoS.$we.$pooh.$osoH;})->middleware('grupoNo1');;
 
 Route::post('armino/add',function(Request $request){
 $armino = new $armino;
@@ -154,7 +155,6 @@ Route::get('animales/{$id}', function($id){
   return $a . $g . $p . $w . $p . $o ;
 })->middleware('grupoNo1');;
 Auth::routes();
-Route::post('')
 Route::get('/home', 'HomeController@index')->name('home');
 
 
