@@ -11,7 +11,129 @@ Route::get('/ListaAnimales',function(){
     $pooh = DB::table('oso')->get();
     $osoH = DB::table('osoHormiguero')->get();
     
-return $arm . $glot . $puercoS . $we . $pooh . $osoH; })->middleware('grupoNo1');;
+return $arm.$glot.$puercoS.$we.$pooh.$osoH;})->middleware('grupoNo1');
+
+Route::get('/ListaAnimales/arminos',function(){
+    $arm = DB::table('arminos')->get();
+    
+return $arm.$glot.$puercoS.$we.$pooh.$osoH;})->middleware('grupoNo1');
+
+Route::post('/armino/add',function(Request $request){
+armino->nombre=$request ->input('nombre');
+armino->color=$request ->input('color');
+armino->genero=$request ->input('genero');
+armino->edad=$request ->input('edad');
+armino->animales_id=$request ->input('animales_id');
+armino->save();
+echo "El ID:" $armino;
+
+}
+Route::put('/armino/update/{id}',function(Request $request, $id){
+armino->nombre=$request ->input('nombre');
+armino->color=$request ->input('color');
+armino->genero=$request ->input('genero');
+armino->edad=$request ->input('edad');
+armino->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $id;
+}
+
+Route::post('/buey/add',function(Request $request){
+buey->nombre=$request ->input('nombre');
+buey->color=$request ->input('color');
+buey->genero=$request ->input('genero');
+buey->edad=$request ->input('edad');
+buey->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $buey;
+
+}
+Route::put('/buey/update/{id}',function(Request $request, $id){
+buey->nombre=$request ->input('nombre');
+buey->color=$request ->input('color');
+buey->genero=$request ->input('genero');
+buey->edad=$request ->input('edad');
+buey->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $id;
+}
+Route::post('/gloton/add',function(Request $request){
+gloton->nombre=$request ->input('nombre');
+gloton->color=$request ->input('color');
+gloton->genero=$request ->input('genero');
+gloton->edad=$request ->input('edad');
+gloton->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $gloton;
+
+}
+Route::put('/gloton/update/{id}',function(Request $request, $id){
+gloton->nombre=$request ->input('nombre');
+gloton->color=$request ->input('color');
+gloton->genero=$request ->input('genero');
+gloton->edad=$request ->input('edad');
+gloton->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $id;
+}
+Route::post('/oso/add',function(Request $request){
+oso->nombre=$request ->input('nombre');
+oso->color=$request ->input('color');
+oso->genero=$request ->input('genero');
+oso->edad=$request ->input('edad');
+oso->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $oso;
+
+}
+Route::put('/oso/update/{id}',function(Request $request, $id){
+oso->nombre=$request ->input('nombre');
+oso->color=$request ->input('color');
+oso->genero=$request ->input('genero');
+oso->edad=$request ->input('edad');
+oso->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $id;
+}
+Route::post('/osoHormiguero/add',function(Request $request){
+osoHormiguero->nombre=$request ->input('nombre');
+osoHormiguero->color=$request ->input('color');
+osoHormiguero->genero=$request ->input('genero');
+osoHormiguero->edad=$request ->input('edad');
+osoHormiguero->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $osoHormiguero;
+
+}
+Route::put('/osoHormiguero/update/{id}',function(Request $request, $id){
+osoHormiguero->nombre=$request ->input('nombre');
+osoHormiguero->color=$request ->input('color');
+osoHormiguero->genero=$request ->input('genero');
+osoHormiguero->edad=$request ->input('edad');
+osoHormiguero->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $id;
+}
+Route::post('/puercoSpin/add',function(Request $request){
+puercoSpin->nombre=$request ->input('nombre');
+puercoSpin->color=$request ->input('color');
+puercoSpin->genero=$request ->input('genero');
+puercoSpin->edad=$request ->input('edad');
+puercoSpin->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $puercoSpin;
+
+}
+Route::put('/puercoSpin/update/{id}',function(Request $request, $id){
+puercoSpin->nombre=$request ->input('nombre');
+puercoSpin->color=$request ->input('color');
+puercoSpin->genero=$request ->input('genero');
+puercoSpin->edad=$request ->input('edad');
+puercoSpin->animales_id=$request ->input('animales_id');
+
+echo "El ID:" $id;
+}
+
 
 Route::get('animales/{$id}', function($id){
   $a=App\armino::find($id)->get($id);
@@ -23,7 +145,7 @@ Route::get('animales/{$id}', function($id){
   return $a . $g . $p . $w . $p . $o ;
 })->middleware('grupoNo1');;
 Auth::routes();
-
+Route::post('')
 Route::get('/home', 'HomeController@index')->name('home');
 
 
