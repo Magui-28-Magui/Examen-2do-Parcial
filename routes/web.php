@@ -19,22 +19,24 @@ Route::get('/ListaAnimales/arminos',function(){
 return $arm.$glot.$puercoS.$we.$pooh.$osoH;})->middleware('grupoNo1');
 
 Route::post('/armino/add',function(Request $request){
-armino->nombre=$request ->input('nombre');
-armino->color=$request ->input('color');
-armino->genero=$request ->input('genero');
-armino->edad=$request ->input('edad');
-armino->animales_id=$request ->input('animales_id');
-armino->save();
+$armino = new $armino;
+$armino->nombre=$request ->input('nombre');
+$armino->color=$request ->input('color');
+$armino->genero=$request ->input('genero');
+$armino->edad=$request ->input('edad');
+$armino->animales_id=$request ->input('animales_id');
+$armino->save();
 echo "El ID:" $armino;
 
 }
 Route::put('/armino/update/{id}',function(Request $request, $id){
-armino->nombre=$request ->input('nombre');
-armino->color=$request ->input('color');
-armino->genero=$request ->input('genero');
-armino->edad=$request ->input('edad');
-armino->animales_id=$request ->input('animales_id');
-
+$armino = new $armino;
+$armino->nombre=$request ->input('nombre');
+$armino->color=$request ->input('color');
+$armino->genero=$request ->input('genero');
+$armino->edad=$request ->input('edad');
+$armino->animales_id=$request ->input('animales_id');
+$armino->save();
 echo "El ID:" $id;
 }
 
